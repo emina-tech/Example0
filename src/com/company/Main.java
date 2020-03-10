@@ -67,7 +67,6 @@ public class Main {
     }
 
 
-
     //Bspl 2
 
 
@@ -197,10 +196,99 @@ public class Main {
 
     }
 
+    // Bspl 4 / Blumen gießen a)
+
+    public static int giessdauer(double feuchtigkeit) {
+        if (feuchtigkeit < 0.2) {
+            return 5;
+        } else if (feuchtigkeit >= 0.2 && feuchtigkeit < 0.4) {
+            return 3;
+        } else if (feuchtigkeit >= 0.4 && feuchtigkeit <= 0.75)
+            return 1;
+
+        return 0;
+
+    }
+
+    public static void testGiessdauer() {
+
+        System.out.println("Test fuer Methode giessdauer...");
+
+        //Test fuer feuchtigkeit = 0.19
+        System.out.print("Rueckwert von giessdauer(0.19) ist: ");
+        System.out.println(giessdauer(0.19) + " Sekunden");
+
+        //Test fuer feuchtigkeit = 0.3
+        System.out.print("Rueckwert von giessdauer(0.3) ist: ");
+        System.out.println(giessdauer(0.3) + " Sekunden");
+
+        //Test fuer feuchtigkeit = 0.55
+        System.out.print("Rueckwert von giessdauer(0.55) ist: ");
+        System.out.println(giessdauer(0.55) + " Sekunden");
+
+        //Test fuer feuchtigkeit = 0.8
+        System.out.print("Rueckwert von giessdauer(0.8) ist: ");
+        System.out.println(giessdauer(0.8) + " Sekunden");
+
+        System.out.println("----------------------------------");
+
+
+    }
+
+    // Bspl 5 Blumen gießen b)
+
+    public static double wassergehalt(int pflanzeNummer) {
+        if (pflanzeNummer == 1) {
+            return 0.99;
+        } else if (pflanzeNummer == 2) {
+            return 0.95;
+        } else if (pflanzeNummer == 3) {
+            return 0;
+        } else if (pflanzeNummer == 4) {
+            return 0.98;
+        } else {
+            return 0.99;
+        }
+    }
+
+    public static void testWassergehalt() {
+        System.out.println("Test fuer Methode wassergehalt...");
+
+        //Test fuer pflanzeNumer = 1
+        System.out.print("Rueckwert von pflanzeNummer(1) ist: ");
+        System.out.println(wassergehalt(1));
+
+        //Test fuer pflanzeNumer = 2
+        System.out.print("Rueckwert von pflanzeNummer(2) ist: ");
+        System.out.println(wassergehalt(2));
+
+        //Test fuer pflanzeNumer = 3
+        System.out.print("Rueckwert von pflanzeNummer(3) ist: ");
+        System.out.println(wassergehalt(3));
+
+        //Test fuer pflanzeNumer = 4
+        System.out.print("Rueckwert von pflanzeNummer(4) ist: ");
+        System.out.println(wassergehalt(4));
+
+        //Test fuer pflanzeNumer =5
+        System.out.print("Rueckwert von pflanzeNummer(5) ist: ");
+        System.out.println(wassergehalt(5));
+
+    }
+
+
+
     public static void main(String[] args) {
         // testLichtStatusA();
         // testLichtStatusB();
-        testFlugweiteStatus();
+        // testFlugweiteStatus();
         // testGeschwindigkeit();
+        // testGiessdauer();
+        /*double feuchtigkeit = 0.5;
+        if (giessdauer(feuchtigkeit) == 0 )
+            System.out.println("Not neccessary!");
+        else
+            System.out.println("Neccessary!");*/
+        testWassergehalt();
     }
 }
